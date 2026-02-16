@@ -3,569 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Emil Thomas — Agentic AI Systems Engineer</title>
-  <meta name="description" content="Personalized portfolio for Emil Thomas, Senior Recruiter at Adobe — Agentic AI Systems & Gen AI Engineering" />
+  <title>For Emil Thomas — GenAI Product Manager</title>
+  <meta name="description" content="Personalized portfolio for Emil Thomas, Senior Recruiter at Adobe — Agentic AI Systems & Gen AI Product Management" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     ::selection { background: rgba(235,16,0,0.12); }
-    body {
-      font-family: 'Source Sans 3', 'Adobe Clean', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #fff; color: #222; min-height: 100vh;
-    }
-    a { text-decoration: none; }
+    body { font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #222; }
+    a { text-decoration: none; cursor: pointer; }
 
-    /* ── NAVBAR ── */
-    .nav {
-      position: sticky; top: 0; z-index: 1000; height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 32px; background: #fff;
-      border-bottom: 1px solid #E8E8E8;
-      transition: box-shadow 0.3s;
-    }
+    .nav { position: sticky; top: 0; z-index: 1000; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: #fff; border-bottom: 1px solid #E8E8E8; transition: box-shadow 0.3s; }
     .nav.scrolled { box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
     .nav-left { display: flex; align-items: center; gap: 28px; }
-    .nav-item {
-      color: #222; font-size: 14px; font-weight: 400;
-      display: flex; align-items: center; gap: 4px; transition: color 0.2s;
-    }
+    .nav-item { color: #222; font-size: 14px; display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
     .nav-item:hover { color: #EB1000; }
     .nav-right { display: flex; align-items: center; gap: 16px; }
-    .nav-grid { width: 24px; height: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; padding: 2px; cursor: pointer; }
+    .nav-grid { width: 24px; height: 24px; display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; padding: 2px; }
     .nav-grid span { background: #999; border-radius: 1px; width: 5px; height: 5px; }
-    .nav-cta {
-      border: 1.5px solid #222; border-radius: 20px; padding: 5px 16px;
-      font-size: 14px; color: #222; font-weight: 500; transition: all 0.2s;
-    }
+    .nav-cta { border: 1.5px solid #222; border-radius: 20px; padding: 5px 16px; font-size: 14px; color: #222; font-weight: 500; transition: all 0.2s; }
     .nav-cta:hover { background: #222; color: #fff; }
 
-    /* ── HERO ── */
-    .hero {
-      position: relative; overflow: hidden;
-      background: #F5F5F5; padding: 72px 24px 56px; min-height: 460px;
-    }
-    .hero-content {
-      position: relative; max-width: 720px; margin: 0 auto; text-align: center;
-      opacity: 0; transform: translateY(30px);
-      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
-    }
+    .hero { position: relative; overflow: hidden; background: #F5F5F5; padding: 72px 24px 56px; min-height: 460px; }
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; text-align: center; opacity: 0; transform: translateY(30px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.1s forwards; }
     .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.12; margin-bottom: 8px; letter-spacing: -0.5px; }
     .hero h1 .red { color: #EB1000; }
     .hero h2 { font-size: 38px; font-weight: 700; line-height: 1.15; margin-bottom: 40px; letter-spacing: -0.3px; }
-
-    /* Search bar */
-    .search-bar {
-      max-width: 600px; margin: 0 auto 20px; position: relative;
-      background: #fff; border-radius: 28px; border: 1.5px solid #D0D0D0;
-      display: flex; align-items: center; padding: 0 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .search-bar:hover, .search-bar:focus-within {
-      border-color: #FF8A00; box-shadow: 0 2px 16px rgba(235,16,0,0.08);
-    }
-    .search-bar input {
-      flex: 1; border: none; outline: none; font-size: 16px;
-      padding: 15px 0; background: transparent; color: #222;
-      font-family: inherit;
-    }
+    .search-bar { max-width: 600px; margin: 0 auto 20px; background: #fff; border-radius: 28px; border: 1.5px solid #D0D0D0; display: flex; align-items: center; padding: 0 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); transition: border-color 0.2s, box-shadow 0.2s; }
+    .search-bar:hover { border-color: #FF8A00; box-shadow: 0 2px 16px rgba(235,16,0,0.08); }
+    .search-bar input { flex: 1; border: none; outline: none; font-size: 16px; padding: 15px 0; background: transparent; color: #222; font-family: inherit; pointer-events: none; }
     .search-bar input::placeholder { color: #999; }
-
-    /* Pills */
-    .pills {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
-      max-width: 680px; margin: 0 auto;
-      opacity: 0; transform: translateY(12px);
-      animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
-    }
-    .pill {
-      display: flex; align-items: center; gap: 6px;
-      background: #fff; border: 1px solid #E8E8E8;
-      border-radius: 20px; padding: 8px 16px; font-size: 13px;
-      color: #222; cursor: pointer; transition: all 0.2s; font-family: inherit;
-    }
+    .pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 680px; margin: 0 auto; opacity: 0; transform: translateY(12px); animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.35s forwards; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #E8E8E8; border-radius: 20px; padding: 8px 16px; font-size: 13px; color: #222; transition: all 0.2s; font-family: inherit; }
     .pill:hover { border-color: #bbb; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-    .hero-disclaimer { font-size: 11px; color: #8A8A8A; margin-top: 24px; line-height: 1.5; }
-    .hero-disclaimer a { color: #8A8A8A; text-decoration: underline; }
+    .hero-disc { font-size: 11px; color: #8A8A8A; margin-top: 24px; line-height: 1.5; }
+    .hero-disc a { color: #8A8A8A; text-decoration: underline; }
+    .sparkle { position: absolute; animation: sparkleFloat 3s ease-in-out infinite alternate; opacity: 0.55; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(10px); }
 
-    /* Sparkles */
-    .sparkle {
-      position: absolute; animation: sparkleFloat 3s ease-in-out infinite alternate; opacity: 0.55;
-    }
-    /* Blobs */
-    .blob {
-      position: absolute; border-radius: 50%; filter: blur(10px);
-    }
-
-    /* ── SECTION CONTAINER ── */
     .section { padding: 24px 32px 0; max-width: 1400px; margin: 0 auto; }
-    .section.bottom { padding: 0 32px 32px; }
+    .section.bot { padding: 0 32px 32px; }
+    .pgrid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+    .cd { background: #1B1B1B; border-radius: 12px; position: relative; overflow: hidden; transition: transform 0.3s; display: block; color: #fff; }
+    .cd:hover { transform: translateY(-2px); }
+    .cd-in { position: relative; z-index: 1; padding: 40px; }
+    .cd h3 { font-size: 26px; font-weight: 700; margin-bottom: 10px; }
+    .cd p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 20px; }
+    .cd.sm { padding: 32px 28px; }
+    .cd.sm h3 { font-size: 20px; }
+    .bow { display: inline-block; border: 1.5px solid #fff; border-radius: 20px; padding: 8px 22px; color: #fff; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+    .bow:hover { background: #fff; color: #1B1B1B; }
+    .bow.sm { padding: 7px 18px; font-size: 13px; }
+    .cblob { position: absolute; border-radius: 50%; }
 
-    /* ── PROMO BANNERS ── */
-    .promo-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-    .card-dark {
-      background: #1B1B1B; border-radius: 12px; position: relative;
-      overflow: hidden; transition: transform 0.3s; cursor: pointer;
-    }
-    .card-dark:hover { transform: translateY(-2px); }
-    .card-dark-inner { position: relative; z-index: 1; padding: 40px; }
-    .card-dark h3 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-    .card-dark p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 20px; }
-    .card-dark.small { padding: 32px 28px; }
-    .card-dark.small h3 { font-size: 20px; }
-    .btn-outline-white {
-      display: inline-block; border: 1.5px solid #fff; border-radius: 20px;
-      padding: 8px 22px; color: #fff; font-size: 14px; font-weight: 500; transition: all 0.2s;
-    }
-    .btn-outline-white:hover { background: #fff; color: #1B1B1B; }
-    .btn-outline-white.sm { padding: 7px 18px; font-size: 13px; }
-    .card-blob {
-      position: absolute; border-radius: 50%;
-    }
+    .mg { display: grid; grid-template-columns: 1fr 1fr 340px; gap: 20px; padding-top: 20px; }
+    .mc { background: #1B1B1B; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s; color: #fff; }
+    .mc:hover { transform: translateY(-2px); }
+    .mch { padding: 30px 30px 16px; }
+    .mch .lb { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 2px; text-transform: uppercase; }
+    .mch h3 { font-size: 24px; font-weight: 700; margin: 8px 0; line-height: 1.2; }
+    .mch p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 14px; }
+    .mch .ul { color: #fff; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
-    /* ── MAIN GRID ── */
-    .main-grid { display: grid; grid-template-columns: 1fr 1fr 340px; gap: 20px; padding-top: 20px; }
-    .main-card {
-      background: #1B1B1B; border-radius: 12px; overflow: hidden;
-      display: flex; flex-direction: column; transition: transform 0.3s; cursor: pointer;
-    }
-    .main-card:hover { transform: translateY(-2px); }
-    .main-card-head { padding: 30px 30px 16px; }
-    .main-card-head .label {
-      font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.45);
-      letter-spacing: 2px; text-transform: uppercase;
-    }
-    .main-card-head h3 { font-size: 24px; font-weight: 700; color: #fff; margin: 8px 0; line-height: 1.2; }
-    .main-card-head p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 14px; }
-    .main-card-head a { color: #fff; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+    .aviz { flex: 1; min-height: 200px; position: relative; overflow: hidden; background: linear-gradient(135deg, #1a1a2e, #16213e); }
+    .anode { position: absolute; width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #fff; animation: nodeFloat 4s ease-in-out infinite alternate; }
+    .aviz svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .cviz { flex: 1; min-height: 200px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a1628, #1a1a2e); padding: 16px 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; }
+    .cmsg { max-width: 85%; border-radius: 12px; padding: 8px 14px; font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.4; opacity: 0; animation: fadeUp 0.5s ease forwards; }
 
-    /* Agent viz */
-    .agent-viz {
-      flex: 1; min-height: 200px; position: relative; overflow: hidden;
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-    }
-    .agent-node {
-      position: absolute; width: 68px; height: 68px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 700; color: #fff;
-      animation: nodeFloat 4s ease-in-out infinite alternate;
-    }
-    .agent-viz svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .sb { display: flex; flex-direction: column; gap: 20px; }
+    .sc { background: #fff; border-radius: 12px; padding: 24px 22px; border: 1px solid #E8E8E8; }
+    .sc h4 { font-size: 17px; font-weight: 700; color: #222; margin-bottom: 14px; }
+    .sl { display: block; padding: 10px 0; transition: padding-left 0.2s; }
+    .sl:hover { padding-left: 4px; }
+    .sl .t { font-size: 14px; font-weight: 600; color: #222; }
+    .sl .s { font-size: 12px; color: #8A8A8A; margin-top: 2px; }
+    .sl+.sl { border-top: 1px solid #E8E8E8; }
+    .ti { font-size: 14px; color: #0D66D0; padding: 4px 0; display: block; }
+    .ql { display: block; font-size: 14px; color: #0D66D0; padding: 3px 0; }
+    .ql:hover { text-decoration: underline; }
 
-    /* Chat viz */
-    .chat-viz {
-      flex: 1; min-height: 200px; position: relative; overflow: hidden;
-      background: linear-gradient(135deg, #0a1628, #1a1a2e);
-      padding: 16px 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px;
-    }
-    .chat-msg {
-      max-width: 85%; border-radius: 12px; padding: 8px 14px;
-      font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.4;
-      opacity: 0; animation: fadeUp 0.5s ease forwards;
-    }
+    .bg { display: grid; grid-template-columns: 1fr 1fr 340px; gap: 20px; }
+    .ticons { padding: 8px 30px 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .tico { border-radius: 10px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: transform 0.2s; }
+    .tico:hover { transform: scale(1.05); }
+    .tico .em { font-size: 22px; }
+    .tico .ll { font-size: 10px; font-weight: 700; color: #fff; }
+    .wi { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.05); border-radius: 10px; padding: 11px 14px; color: rgba(255,255,255,0.7); }
+    .wi .em { font-size: 18px; }
+    .wi .tx { font-size: 13px; font-weight: 500; }
+    .ns { background: #EB1000; border-radius: 12px; padding: 26px 22px; }
+    .ns h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .ni { padding: 14px 0; display: block; color: #fff; }
+    .ni+.ni { border-top: 1px solid rgba(255,255,255,0.2); }
+    .ni h5 { font-size: 15px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; }
+    .ni p { font-size: 12px; color: rgba(255,255,255,0.75); margin-bottom: 8px; line-height: 1.5; }
+    .ni .rs { font-size: 13px; text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
 
-    /* Sidebar */
-    .sidebar { display: flex; flex-direction: column; gap: 20px; }
-    .sidebar-card {
-      background: #fff; border-radius: 12px; padding: 24px 22px;
-      border: 1px solid #E8E8E8;
-    }
-    .sidebar-card h4 { font-size: 17px; font-weight: 700; color: #222; margin-bottom: 14px; }
-    .sidebar-link { display: block; padding: 10px 0; transition: padding-left 0.2s; }
-    .sidebar-link:hover { padding-left: 4px; }
-    .sidebar-link .title { font-size: 14px; font-weight: 600; color: #222; }
-    .sidebar-link .sub { font-size: 12px; color: #8A8A8A; margin-top: 2px; }
-    .sidebar-link + .sidebar-link { border-top: 1px solid #E8E8E8; }
-    .tech-item { font-size: 14px; color: #0D66D0; padding: 4px 0; }
-    .quick-link { display: block; font-size: 14px; color: #0D66D0; padding: 3px 0; }
-    .quick-link:hover { text-decoration: underline; }
+    .ft { border-top: 1px solid #E8E8E8; padding: 36px 32px 20px; max-width: 1400px; margin: 0 auto; }
+    .ftc { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; margin-bottom: 36px; }
+    .ftcl h5 { font-size: 14px; font-weight: 700; color: #222; margin-bottom: 12px; }
+    .ftcl a { display: block; font-size: 13px; color: #8A8A8A; padding: 3px 0; transition: color 0.2s; }
+    .ftcl a:hover { color: #222; }
+    .ftb { border-top: 1px solid #E8E8E8; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .ftbl { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #8A8A8A; }
+    .ftbr { display: flex; gap: 14px; font-size: 12px; }
+    .ftbr a { color: #8A8A8A; }
+    .ftbr a:hover { color: #222; }
 
-    /* ── BOTTOM GRID ── */
-    .bottom-grid { display: grid; grid-template-columns: 1fr 1fr 340px; gap: 20px; }
-    .tech-icons { padding: 8px 30px 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .tech-icon {
-      border-radius: 10px; aspect-ratio: 1;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-      transition: transform 0.2s;
-    }
-    .tech-icon:hover { transform: scale(1.05); }
-    .tech-icon .emoji { font-size: 22px; }
-    .tech-icon .lbl { font-size: 10px; font-weight: 700; color: #fff; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes sparkleFloat { 0% { transform: translateY(0) scale(1); opacity: 0.45; } 100% { transform: translateY(-8px) scale(1.12); opacity: 0.75; } }
+    @keyframes nodeFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
 
-    .why-item {
-      display: flex; align-items: center; gap: 12px;
-      background: rgba(255,255,255,0.05); border-radius: 10px; padding: 11px 14px;
-    }
-    .why-item .emoji { font-size: 18px; }
-    .why-item .txt { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 500; }
-
-    /* News sidebar */
-    .news-sidebar {
-      background: #EB1000; border-radius: 12px; padding: 26px 22px;
-      display: flex; flex-direction: column;
-    }
-    .news-sidebar h4 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 20px; }
-    .news-item { padding: 14px 0; }
-    .news-item + .news-item { border-top: 1px solid rgba(255,255,255,0.2); }
-    .news-item h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.3; }
-    .news-item p { font-size: 12px; color: rgba(255,255,255,0.75); margin-bottom: 8px; line-height: 1.5; }
-    .news-item a { font-size: 13px; color: #fff; text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
-
-    /* ── FOOTER ── */
-    .footer { border-top: 1px solid #E8E8E8; padding: 36px 32px 20px; max-width: 1400px; margin: 0 auto; }
-    .footer-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; margin-bottom: 36px; }
-    .footer-col h5 { font-size: 14px; font-weight: 700; color: #222; margin-bottom: 12px; }
-    .footer-col a { display: block; font-size: 13px; color: #8A8A8A; padding: 3px 0; transition: color 0.2s; }
-    .footer-col a:hover { color: #222; }
-    .footer-bottom {
-      border-top: 1px solid #E8E8E8; padding-top: 16px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .footer-bottom-left { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #8A8A8A; }
-    .footer-bottom-right { display: flex; gap: 14px; font-size: 12px; }
-    .footer-bottom-right a { color: #8A8A8A; }
-    .footer-bottom-right a:hover { color: #222; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes sparkleFloat {
-      0% { transform: translateY(0) scale(1); opacity: 0.45; }
-      100% { transform: translateY(-8px) scale(1.12); opacity: 0.75; }
-    }
-    @keyframes nodeFloat {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-6px); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1100px) {
-      .main-grid, .bottom-grid { grid-template-columns: 1fr 1fr; }
-      .sidebar, .news-sidebar { grid-column: span 2; }
-      .footer-cols { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .nav-left a:not(:first-child) { display: none; }
-      .hero h1 { font-size: 36px; }
-      .hero h2 { font-size: 26px; }
-      .promo-grid, .main-grid, .bottom-grid { grid-template-columns: 1fr; }
-      .sidebar, .news-sidebar { grid-column: span 1; }
-      .footer-cols { grid-template-columns: repeat(2, 1fr); }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-    }
+    @media (max-width:1100px) { .mg,.bg { grid-template-columns: 1fr 1fr; } .sb,.ns { grid-column: span 2; } .ftc { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width:768px) { .nav-item { display: none !important; } .hero h1 { font-size: 36px; } .hero h2 { font-size: 26px; } .pgrid,.mg,.bg { grid-template-columns: 1fr; } .sb,.ns { grid-column: span 1; } .ftc { grid-template-columns: repeat(2,1fr); } .ftb { flex-direction: column; gap: 10px; text-align: center; } }
   </style>
 </head>
 <body>
 
-<!-- ═══════════ NAVBAR ═══════════ -->
 <nav class="nav" id="navbar">
   <div class="nav-left">
-    <a href="#">
-      <svg width="30" height="26" viewBox="0 0 30 26" fill="none">
-        <path d="M11.5 0H0L11.5 26V0Z" fill="#EB1000"/>
-        <path d="M18.5 0H30L18.5 26V0Z" fill="#EB1000"/>
-        <path d="M15 9.5L21 26H17L14.5 19.5H9L15 9.5Z" fill="#EB1000"/>
-      </svg>
-    </a>
-    <a href="#section-agents" class="nav-item">Agentic AI Systems <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
-    <a href="#section-genai" class="nav-item">Gen AI Engineering <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
-    <a href="#section-projects" class="nav-item">Projects & Impact <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
-    <a href="#section-why" class="nav-item">Why Adobe <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="https://ranajunaid.com/" target="_blank"><svg width="30" height="26" viewBox="0 0 30 26" fill="none"><path d="M11.5 0H0L11.5 26V0Z" fill="#EB1000"/><path d="M18.5 0H30L18.5 26V0Z" fill="#EB1000"/><path d="M15 9.5L21 26H17L14.5 19.5H9L15 9.5Z" fill="#EB1000"/></svg></a>
+    <a href="https://ranajunaid.com/" target="_blank" class="nav-item">Agentic AI Products <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="https://ranajunaid.com/" target="_blank" class="nav-item">Gen AI Strategy <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="https://ranajunaid.com/" target="_blank" class="nav-item">Products & Impact <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="https://ranajunaid.com/" target="_blank" class="nav-item">Why Adobe <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
   </div>
   <div class="nav-right">
-    <div class="nav-grid">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
+    <a href="https://ranajunaid.com/" target="_blank" class="nav-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></a>
     <a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank" class="nav-cta">Let's Talk</a>
   </div>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
-  <!-- Blobs -->
-  <div class="blob" style="top:-40px;left:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(235,16,0,0.1) 0%,rgba(255,107,0,0.06) 40%,transparent 70%);"></div>
-  <div class="blob" style="top:60px;left:40px;width:200px;height:200px;background:radial-gradient(circle,rgba(13,102,214,0.08) 0%,transparent 70%);filter:blur(8px);"></div>
+  <div class="blob" style="top:-40px;left:-80px;width:340px;height:340px;background:radial-gradient(circle,rgba(235,16,0,0.1),rgba(255,107,0,0.06) 40%,transparent 70%);"></div>
+  <div class="blob" style="top:60px;left:40px;width:200px;height:200px;background:radial-gradient(circle,rgba(13,102,214,0.08),transparent 70%);filter:blur(8px);"></div>
   <div style="position:absolute;top:20px;left:140px;width:70px;height:70px;background:linear-gradient(135deg,#4CAF50,#81C784);border-radius:30% 70% 50% 50%;opacity:0.2;filter:blur(3px);"></div>
-  <div class="blob" style="top:-20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(92,92,224,0.08) 0%,rgba(255,107,0,0.04) 50%,transparent 70%);"></div>
-  <div class="blob" style="top:80px;right:20px;width:160px;height:160px;background:radial-gradient(circle,rgba(235,16,0,0.06) 0%,transparent 70%);filter:blur(6px);"></div>
+  <div class="blob" style="top:-20px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(92,92,224,0.08),rgba(255,107,0,0.04) 50%,transparent 70%);"></div>
+  <div class="blob" style="top:80px;right:20px;width:160px;height:160px;background:radial-gradient(circle,rgba(235,16,0,0.06),transparent 70%);filter:blur(6px);"></div>
   <div style="position:absolute;top:50px;right:120px;width:50px;height:50px;background:linear-gradient(135deg,#FF6B00,#FFC107);border-radius:50% 30% 60% 40%;opacity:0.18;filter:blur(3px);"></div>
-
-  <!-- Sparkles -->
   <svg class="sparkle" style="top:8%;left:5%;animation-delay:0s;" width="18" height="18" viewBox="0 0 24 24" fill="#FF6B00"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-  <svg class="sparkle" style="top:12%;left:22%;animation-delay:0.5s;" width="12" height="12" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
+  <svg class="sparkle" style="top:12%;left:22%;animation-delay:.5s;" width="12" height="12" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
   <svg class="sparkle" style="top:6%;right:15%;animation-delay:1s;" width="20" height="20" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-  <svg class="sparkle" style="top:18%;right:8%;animation-delay:0.3s;" width="14" height="14" viewBox="0 0 24 24" fill="#5C5CE0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-  <svg class="sparkle" style="top:25%;left:8%;animation-delay:0.7s;" width="10" height="10" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
+  <svg class="sparkle" style="top:18%;right:8%;animation-delay:.3s;" width="14" height="14" viewBox="0 0 24 24" fill="#5C5CE0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
+  <svg class="sparkle" style="top:25%;left:8%;animation-delay:.7s;" width="10" height="10" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
   <svg class="sparkle" style="top:15%;left:45%;animation-delay:1.2s;" width="8" height="8" viewBox="0 0 24 24" fill="#FF6B00"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-  <svg class="sparkle" style="top:22%;right:25%;animation-delay:0.9s;" width="16" height="16" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
+  <svg class="sparkle" style="top:22%;right:25%;animation-delay:.9s;" width="16" height="16" viewBox="0 0 24 24" fill="#0D66D0"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
 
   <div class="hero-content">
     <h1>Hi <span class="red">Emil Thomas</span>,</h1>
-    <h2>meet your next GenAI engineer.</h2>
-
-    <div class="search-bar">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-right:12px;">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="url(#aiG)"/>
-        <path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-        <defs><linearGradient id="aiG" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#EB1000"/><stop offset="1" stop-color="#FF6B00"/></linearGradient></defs>
-      </svg>
-      <input type="text" placeholder="Ask about my GenAI & Agentic AI expertise" />
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;cursor:pointer;opacity:0.35;">
-        <path d="M5 12H19M13 6L19 12L13 18" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-
+    <h2>meet your next GenAI Product Manager.</h2>
+    <a href="https://ranajunaid.com/" target="_blank" style="text-decoration:none;display:block;">
+      <div class="search-bar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-right:12px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="url(#aiG)"/><path d="M8 12h8M12 8v8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="aiG" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#EB1000"/><stop offset="1" stop-color="#FF6B00"/></linearGradient></defs></svg>
+        <input type="text" placeholder="Ask about my GenAI & Agentic AI product experience" readonly />
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;opacity:.35;"><path d="M5 12H19M13 6L19 12L13 18" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </a>
     <div class="pills">
-      <button class="pill">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-        What Agentic AI systems have you built?
-      </button>
-      <button class="pill">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-        How can you scale Gen AI at Adobe?
-      </button>
-      <button class="pill">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-        Tell me about your RAG experience
-      </button>
-      <button class="pill">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>
-        What's your multi-agent approach?
-      </button>
+      <a href="https://ranajunaid.com/" target="_blank" class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>What AI products have you shipped?</a>
+      <a href="https://ranajunaid.com/" target="_blank" class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>How do you drive GenAI product strategy?</a>
+      <a href="https://ranajunaid.com/" target="_blank" class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>Tell me about your agentic AI roadmaps</a>
+      <a href="https://ranajunaid.com/" target="_blank" class="pill"><svg width="11" height="11" viewBox="0 0 24 24" fill="#EB1000"><path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z"/></svg>What's your approach to AI-first experiences?</a>
     </div>
-
-    <p class="hero-disclaimer">
-      Personalized portfolio for Emil Thomas, Senior Recruiter — Agentic AI Systems at Adobe.<br>
-      All details are representative of real capabilities. <a href="https://ranajunaid.com/" target="_blank">Full portfolio</a>.
-    </p>
+    <p class="hero-disc">Personalized portfolio for Emil Thomas, Senior Recruiter — Agentic AI Systems at Adobe.<br>All details represent real capabilities. <a href="https://ranajunaid.com/" target="_blank">Full portfolio</a>.</p>
   </div>
 </section>
 
-<!-- ═══════════ PROMO BANNERS ═══════════ -->
 <section class="section">
-  <div class="promo-grid">
-    <div class="card-dark" style="min-height:260px;">
-      <div class="card-dark-inner">
-        <h3>Agentic AI Systems Engineer.</h3>
-        <p style="max-width:420px;">Multi-agent orchestration, autonomous workflows, and scalable AI pipelines — built to impact billions across Adobe Experience Cloud. Terms apply.*</p>
-        <a href="https://ranajunaid.com/" target="_blank" class="btn-outline-white">See my work</a>
+  <div class="pgrid">
+    <a href="https://ranajunaid.com/" target="_blank" class="cd" style="min-height:260px;">
+      <div class="cd-in">
+        <h3>GenAI Product Manager.</h3>
+        <p style="max-width:420px;">Defining product vision, driving roadmaps, and shipping AI-powered experiences at scale — from 0→1 ideation to billions of users across enterprise platforms.</p>
+        <span class="bow">See my work</span>
       </div>
-      <div class="card-blob" style="bottom:-30px;right:-30px;width:240px;height:240px;background:radial-gradient(circle,rgba(235,16,0,0.2) 0%,transparent 70%);"></div>
+      <div class="cblob" style="bottom:-30px;right:-30px;width:240px;height:240px;background:radial-gradient(circle,rgba(235,16,0,0.2),transparent 70%);"></div>
       <div style="position:absolute;bottom:20px;right:40px;width:180px;height:180px;background:linear-gradient(135deg,rgba(255,107,0,0.25),rgba(92,92,224,0.15));border-radius:30% 70% 60% 40%;filter:blur(6px);"></div>
-    </div>
-    <div class="card-dark small">
-      <h3 style="font-size:20px;">Gen AI Experience Engineering.</h3>
-      <p>RAG pipelines, LLM fine-tuning, and real-time AI personalization — delivering rapid value through iterative development.</p>
-      <a href="https://ranajunaid.com/" target="_blank" class="btn-outline-white sm">Learn more</a>
-      <div class="card-blob" style="bottom:-20px;right:-20px;width:140px;height:140px;background:radial-gradient(circle,rgba(13,102,214,0.2) 0%,transparent 70%);"></div>
-    </div>
+    </a>
+    <a href="https://ranajunaid.com/" target="_blank" class="cd sm">
+      <h3>Agentic AI Product Strategy.</h3>
+      <p>Translating complex AI capabilities into user-centric products — stakeholder alignment, GTM strategy, and data-driven iteration.</p>
+      <span class="bow sm">Learn more</span>
+      <div class="cblob" style="bottom:-20px;right:-20px;width:140px;height:140px;background:radial-gradient(circle,rgba(13,102,214,0.2),transparent 70%);"></div>
+    </a>
   </div>
 </section>
 
-<!-- ═══════════ MAIN GRID ═══════════ -->
-<section class="section" id="section-agents">
-  <div class="main-grid">
-
-    <!-- AGENTIC AI -->
-    <div class="main-card" id="section-genai">
-      <div class="main-card-head">
-        <div class="label">AGENTIC AI SYSTEMS</div>
-        <h3>Autonomous agents. Real impact.</h3>
-        <p>Multi-agent orchestration with tool-use, memory management, and plan-and-execute patterns at scale.</p>
-        <a href="https://ranajunaid.com/" target="_blank">See projects</a>
+<section class="section">
+  <div class="mg">
+    <a href="https://ranajunaid.com/" target="_blank" class="mc">
+      <div class="mch"><div class="lb">AGENTIC AI PRODUCTS</div><h3>Vision to launch. Zero to millions.</h3><p>Defining and shipping agentic AI products — multi-agent workflows, autonomous experiences, and intelligent automation at enterprise scale.</p><span class="ul">See products</span></div>
+      <div class="aviz">
+        <div class="anode" style="top:18%;left:14%;background:radial-gradient(circle,rgba(235,16,0,0.35),rgba(235,16,0,0.1));border:2px solid rgba(235,16,0,0.5);animation-delay:0s;">Vision</div>
+        <div class="anode" style="top:48%;left:48%;background:radial-gradient(circle,rgba(13,102,214,0.35),rgba(13,102,214,0.1));border:2px solid rgba(13,102,214,0.5);animation-delay:.4s;">Strategy</div>
+        <div class="anode" style="top:22%;left:68%;background:radial-gradient(circle,rgba(92,92,224,0.35),rgba(92,92,224,0.1));border:2px solid rgba(92,92,224,0.5);animation-delay:.8s;">Research</div>
+        <div class="anode" style="top:64%;left:22%;background:radial-gradient(circle,rgba(255,107,0,0.35),rgba(255,107,0,0.1));border:2px solid rgba(255,107,0,0.5);animation-delay:1.2s;">Ship</div>
+        <div class="anode" style="top:68%;left:70%;background:radial-gradient(circle,rgba(76,175,80,0.35),rgba(76,175,80,0.1));border:2px solid rgba(76,175,80,0.5);animation-delay:1.6s;">Scale</div>
+        <svg><line x1="17%" y1="26%" x2="51%" y2="52%" stroke="rgba(235,16,0,0.15)" stroke-width="1" stroke-dasharray="4"/><line x1="52%" y1="52%" x2="71%" y2="28%" stroke="rgba(13,102,214,0.15)" stroke-width="1" stroke-dasharray="4"/><line x1="26%" y1="68%" x2="51%" y2="52%" stroke="rgba(255,107,0,0.15)" stroke-width="1" stroke-dasharray="4"/><line x1="52%" y1="52%" x2="73%" y2="72%" stroke="rgba(76,175,80,0.15)" stroke-width="1" stroke-dasharray="4"/></svg>
       </div>
-      <div class="agent-viz">
-        <div class="agent-node" style="top:18%;left:14%;background:radial-gradient(circle,rgba(235,16,0,0.35),rgba(235,16,0,0.1));border:2px solid rgba(235,16,0,0.5);animation-delay:0s;">Planner</div>
-        <div class="agent-node" style="top:48%;left:48%;background:radial-gradient(circle,rgba(13,102,214,0.35),rgba(13,102,214,0.1));border:2px solid rgba(13,102,214,0.5);animation-delay:0.4s;">Executor</div>
-        <div class="agent-node" style="top:22%;left:68%;background:radial-gradient(circle,rgba(92,92,224,0.35),rgba(92,92,224,0.1));border:2px solid rgba(92,92,224,0.5);animation-delay:0.8s;">Memory</div>
-        <div class="agent-node" style="top:64%;left:22%;background:radial-gradient(circle,rgba(255,107,0,0.35),rgba(255,107,0,0.1));border:2px solid rgba(255,107,0,0.5);animation-delay:1.2s;">Tools</div>
-        <div class="agent-node" style="top:68%;left:70%;background:radial-gradient(circle,rgba(76,175,80,0.35),rgba(76,175,80,0.1));border:2px solid rgba(76,175,80,0.5);animation-delay:1.6s;">Critic</div>
-        <svg>
-          <line x1="17%" y1="26%" x2="51%" y2="52%" stroke="rgba(235,16,0,0.15)" stroke-width="1" stroke-dasharray="4"/>
-          <line x1="52%" y1="52%" x2="71%" y2="28%" stroke="rgba(13,102,214,0.15)" stroke-width="1" stroke-dasharray="4"/>
-          <line x1="26%" y1="68%" x2="51%" y2="52%" stroke="rgba(255,107,0,0.15)" stroke-width="1" stroke-dasharray="4"/>
-          <line x1="52%" y1="52%" x2="73%" y2="72%" stroke="rgba(76,175,80,0.15)" stroke-width="1" stroke-dasharray="4"/>
-        </svg>
+    </a>
+    <a href="https://ranajunaid.com/" target="_blank" class="mc">
+      <div class="mch"><div class="lb">GEN AI PRODUCT STRATEGY</div><h3>Data-driven. User-obsessed.</h3><p>Turning GenAI capabilities into products people love — roadmapping, prioritization, and rapid iteration with measurable impact.</p><span class="ul">Explore work</span></div>
+      <div class="cviz">
+        <div class="cmsg" style="align-self:flex-end;background:rgba(13,102,214,0.18);border:1px solid rgba(13,102,214,0.25);animation-delay:0s;">Define AI personalization MVP for 50M users</div>
+        <div class="cmsg" style="align-self:flex-start;background:rgba(235,16,0,0.1);border:1px solid rgba(235,16,0,0.18);animation-delay:.12s;">Shipped v1 — adoption up 40% in 2 weeks ✓</div>
+        <div class="cmsg" style="align-self:flex-end;background:rgba(92,92,224,0.12);border:1px solid rgba(92,92,224,0.2);animation-delay:.24s;">Expand to multi-modal: image + text + voice</div>
+        <div class="cmsg" style="align-self:flex-start;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.18);animation-delay:.36s;">A/B test winner: +23% engagement, shipping now ✓</div>
       </div>
-    </div>
-
-    <!-- GEN AI -->
-    <div class="main-card">
-      <div class="main-card-head">
-        <div class="label">GEN AI ENGINEERING</div>
-        <h3>Ship. Iterate. Scale. Repeat.</h3>
-        <p>RAG pipelines, fine-tuned LLMs, and AI-powered experiences — startup speed, enterprise scale.</p>
-        <a href="https://ranajunaid.com/" target="_blank">Explore work</a>
+    </a>
+    <div class="sb">
+      <div class="sc">
+        <h4>Product Expertise</h4>
+        <a href="https://ranajunaid.com/" target="_blank" class="sl"><div class="t">AI Product Strategy</div><div class="s">0→1, Roadmapping, GTM</div></a>
+        <a href="https://ranajunaid.com/" target="_blank" class="sl"><div class="t">Agentic AI Products</div><div class="s">Multi-agent UX, Autonomous Workflows</div></a>
+        <a href="https://ranajunaid.com/" target="_blank" class="sl"><div class="t">GenAI Experiences</div><div class="s">RAG, Personalization, Content at Scale</div></a>
       </div>
-      <div class="chat-viz">
-        <div class="chat-msg" style="align-self:flex-end;background:rgba(13,102,214,0.18);border:1px solid rgba(13,102,214,0.25);animation-delay:0s;">Build personalization engine for 50M users</div>
-        <div class="chat-msg" style="align-self:flex-start;background:rgba(235,16,0,0.1);border:1px solid rgba(235,16,0,0.18);animation-delay:0.12s;">Deploying RAG pipeline — sub-200ms latency ✓</div>
-        <div class="chat-msg" style="align-self:flex-end;background:rgba(92,92,224,0.12);border:1px solid rgba(92,92,224,0.2);animation-delay:0.24s;">Scale to multi-modal: image + text inputs</div>
-        <div class="chat-msg" style="align-self:flex-start;background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.18);animation-delay:0.36s;">Fine-tuning complete. A/B test: +23% CTR ✓</div>
-      </div>
-    </div>
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <div class="sidebar-card">
-        <h4>Core Expertise</h4>
-        <a href="https://ranajunaid.com/" target="_blank" class="sidebar-link">
-          <div class="title">Multi-Agent Systems</div>
-          <div class="sub">LangGraph, CrewAI, AutoGen</div>
-        </a>
-        <a href="https://ranajunaid.com/" target="_blank" class="sidebar-link">
-          <div class="title">RAG & Vector Search</div>
-          <div class="sub">Pinecone, Weaviate, pgvector</div>
-        </a>
-        <a href="https://ranajunaid.com/" target="_blank" class="sidebar-link">
-          <div class="title">LLM Deployment</div>
-          <div class="sub">vLLM, TGI, ONNX Runtime</div>
-        </a>
-      </div>
-      <div class="sidebar-card">
-        <h4>Tech Stack</h4>
-        <div class="tech-item">Python, TypeScript, Rust</div>
-        <div class="tech-item">PyTorch, HuggingFace</div>
-        <div class="tech-item">Kubernetes, AWS, GCP</div>
+      <div class="sc">
+        <h4>Domain Knowledge</h4>
+        <a href="https://ranajunaid.com/" target="_blank" class="ti">LLMs, RAG, Multi-Agent Systems</a>
+        <a href="https://ranajunaid.com/" target="_blank" class="ti">Data Analytics & Experimentation</a>
+        <a href="https://ranajunaid.com/" target="_blank" class="ti">Enterprise SaaS & Cloud Platforms</a>
         <h4 style="margin-top:18px;">Quick Links</h4>
-        <a href="https://ranajunaid.com/" target="_blank" class="quick-link">View full portfolio</a>
-        <a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank" class="quick-link">Schedule a call</a>
+        <a href="https://ranajunaid.com/" target="_blank" class="ql">View full portfolio</a>
+        <a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank" class="ql">Schedule a call</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ BOTTOM GRID ═══════════ -->
-<section class="section bottom" id="section-projects">
-  <div class="bottom-grid">
-
-    <!-- PROJECTS -->
-    <div class="main-card">
-      <div class="main-card-head">
-        <div class="label">PROJECTS & IMPACT</div>
-        <h3 style="font-size:22px;">Built for scale. Designed for impact.</h3>
-        <p>Agentic AI systems, RAG pipelines, and Gen AI solutions deployed at production scale.</p>
-        <a href="https://ranajunaid.com/" target="_blank">View all projects</a>
+<section class="section bot">
+  <div class="bg">
+    <a href="https://ranajunaid.com/" target="_blank" class="mc">
+      <div class="mch"><div class="lb">PRODUCTS & IMPACT</div><h3 style="font-size:22px;">Shipped products. Measurable results.</h3><p>AI-powered products launched, scaled, and iterated — with real business outcomes and user love.</p><span class="ul">View all products</span></div>
+      <div class="ticons">
+        <div class="tico" style="background:linear-gradient(135deg,#EB1000,#FF6B00);"><span class="em">🎯</span><span class="ll">Strategy</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#0D66D0,#5C5CE0);"><span class="em">📊</span><span class="ll">Analytics</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#4CAF50,#81C784);"><span class="em">🧠</span><span class="ll">GenAI</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#FF6B00,#FFC107);"><span class="em">🤖</span><span class="ll">Agents</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#E91E63,#F06292);"><span class="em">🚀</span><span class="ll">Launch</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#326CE5,#64B5F6);"><span class="em">📈</span><span class="ll">Growth</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#9C27B0,#CE93D8);"><span class="em">🔬</span><span class="ll">Research</span></div>
+        <div class="tico" style="background:linear-gradient(135deg,#FF5722,#FF8A65);"><span class="em">⚡</span><span class="ll">Iterate</span></div>
       </div>
-      <div class="tech-icons">
-        <div class="tech-icon" style="background:linear-gradient(135deg,#EB1000,#FF6B00);"><span class="emoji">🔗</span><span class="lbl">LangGraph</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#0D66D0,#5C5CE0);"><span class="emoji">📚</span><span class="lbl">RAG</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#4CAF50,#81C784);"><span class="emoji">🧠</span><span class="lbl">LLMs</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#FF6B00,#FFC107);"><span class="emoji">🤖</span><span class="lbl">Agents</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#E91E63,#F06292);"><span class="emoji">🔥</span><span class="lbl">PyTorch</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#326CE5,#64B5F6);"><span class="emoji">☸️</span><span class="lbl">K8s</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#9C27B0,#CE93D8);"><span class="emoji">📐</span><span class="lbl">Vector</span></div>
-        <div class="tech-icon" style="background:linear-gradient(135deg,#FF5722,#FF8A65);"><span class="emoji">⚙️</span><span class="lbl">MLOps</span></div>
-      </div>
-    </div>
-
-    <!-- WHY ADOBE -->
-    <div class="main-card" id="section-why" style="position:relative;">
-      <div class="main-card-head">
-        <div class="label">WHY ADOBE</div>
-        <h3 style="font-size:22px;">The perfect alignment.</h3>
-        <p>Your team integrates AI across Adobe Experience Cloud with a startup mentality. That's exactly how I build.</p>
-        <a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank">Let's talk</a>
-      </div>
+    </a>
+    <div class="mc" style="position:relative;">
+      <div class="mch"><div class="lb">WHY ADOBE</div><h3 style="font-size:22px;">The perfect alignment.</h3><p>Your team integrates AI across Adobe Experience Cloud with a startup mentality. That's exactly how I build products.</p><a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank" class="ul">Let's talk</a></div>
       <div style="padding:0 30px 30px;display:flex;flex-direction:column;gap:10px;">
-        <div class="why-item"><span class="emoji">🚀</span><span class="txt">Startup speed, enterprise scale</span></div>
-        <div class="why-item"><span class="emoji">🌍</span><span class="txt">Impact billions through Adobe products</span></div>
-        <div class="why-item"><span class="emoji">🧠</span><span class="txt">AI-first across Experience Cloud</span></div>
-        <div class="why-item"><span class="emoji">🔗</span><span class="txt">Agentic AI is the future — and my expertise</span></div>
+        <a href="https://ranajunaid.com/" target="_blank" class="wi" style="text-decoration:none;"><span class="em">🚀</span><span class="tx">Startup speed, enterprise scale</span></a>
+        <a href="https://ranajunaid.com/" target="_blank" class="wi" style="text-decoration:none;"><span class="em">🌍</span><span class="tx">Impact billions through Adobe products</span></a>
+        <a href="https://ranajunaid.com/" target="_blank" class="wi" style="text-decoration:none;"><span class="em">🧠</span><span class="tx">AI-first product thinking across Experience Cloud</span></a>
+        <a href="https://ranajunaid.com/" target="_blank" class="wi" style="text-decoration:none;"><span class="em">🔗</span><span class="tx">Agentic AI is the future — and my expertise</span></a>
       </div>
-      <div style="position:absolute;bottom:-30px;right:-30px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,107,0,0.12) 0%,transparent 70%);border-radius:50%;"></div>
+      <div style="position:absolute;bottom:-30px;right:-30px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,107,0,0.12),transparent 70%);border-radius:50%;"></div>
     </div>
-
-    <!-- NEWS SIDEBAR -->
-    <div class="news-sidebar">
+    <div class="ns">
       <h4>Why I'm the right fit</h4>
-      <div class="news-item">
-        <h5>12+ agentic AI systems built from zero to production.</h5>
-        <p>Multi-agent orchestration, tool-use patterns, and autonomous workflows — proven at scale.</p>
-        <a href="https://ranajunaid.com/" target="_blank">Read the story</a>
-      </div>
-      <div class="news-item">
-        <h5>Rapid delivery is my default mode.</h5>
-        <p>Ship fast, iterate relentlessly, architect for scale from day one.</p>
-        <a href="https://ranajunaid.com/" target="_blank">Read the story</a>
-      </div>
-      <div class="news-item">
-        <h5>Obsessed with AI-powered experiences.</h5>
-        <p>RAG assistants to real-time personalization — I build what your team ships.</p>
-        <a href="https://ranajunaid.com/" target="_blank">Read the story</a>
-      </div>
+      <a href="https://ranajunaid.com/" target="_blank" class="ni"><h5>Shipped AI products from 0→1 to millions of users.</h5><p>Product vision, cross-functional execution, and data-driven iteration — proven at scale.</p><span class="rs">Read the story</span></a>
+      <a href="https://ranajunaid.com/" target="_blank" class="ni"><h5>Rapid delivery is my default mode.</h5><p>Ship fast, learn from users, iterate relentlessly. Your startup mentality is my standard practice.</p><span class="rs">Read the story</span></a>
+      <a href="https://ranajunaid.com/" target="_blank" class="ni"><h5>Obsessed with AI-powered user experiences.</h5><p>From agentic workflows to GenAI personalization — I define and ship what users love.</p><span class="rs">Read the story</span></a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ FOOTER ═══════════ -->
-<footer class="footer">
-  <div class="footer-cols">
-    <div class="footer-col">
-      <h5>Agentic AI</h5>
-      <a href="https://ranajunaid.com/" target="_blank">Multi-Agent Systems</a>
-      <a href="https://ranajunaid.com/" target="_blank">Tool-Use Patterns</a>
-      <a href="https://ranajunaid.com/" target="_blank">Agent Memory</a>
-      <a href="https://ranajunaid.com/" target="_blank">ReAct Framework</a>
-      <a href="https://ranajunaid.com/" target="_blank">Autonomous Workflows</a>
-    </div>
-    <div class="footer-col">
-      <h5>Gen AI Engineering</h5>
-      <a href="https://ranajunaid.com/" target="_blank">RAG Pipelines</a>
-      <a href="https://ranajunaid.com/" target="_blank">LLM Fine-Tuning</a>
-      <a href="https://ranajunaid.com/" target="_blank">Prompt Engineering</a>
-      <a href="https://ranajunaid.com/" target="_blank">Embedding Search</a>
-      <a href="https://ranajunaid.com/" target="_blank">Multi-Modal AI</a>
-    </div>
-    <div class="footer-col">
-      <h5>Infrastructure</h5>
-      <a href="https://ranajunaid.com/" target="_blank">Model Serving</a>
-      <a href="https://ranajunaid.com/" target="_blank">Kubernetes</a>
-      <a href="https://ranajunaid.com/" target="_blank">GPU Optimization</a>
-      <a href="https://ranajunaid.com/" target="_blank">CI/CD for ML</a>
-      <a href="https://ranajunaid.com/" target="_blank">Monitoring</a>
-    </div>
-    <div class="footer-col">
-      <h5>Connect</h5>
-      <a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank">Schedule a Call</a>
-      <a href="https://ranajunaid.com/" target="_blank">Full Portfolio</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">GitHub</a>
-    </div>
-    <div class="footer-col">
-      <h5>About</h5>
-      <a href="#">#AdobeLife</a>
-      <a href="#">#GenAI</a>
-      <a href="#">#AgenticAI</a>
-      <a href="#">San Jose, CA</a>
-    </div>
+<footer class="ft">
+  <div class="ftc">
+    <div class="ftcl"><h5>Agentic AI Products</h5><a href="https://ranajunaid.com/" target="_blank">Multi-Agent Experiences</a><a href="https://ranajunaid.com/" target="_blank">Autonomous Workflows</a><a href="https://ranajunaid.com/" target="_blank">AI-Powered Personalization</a><a href="https://ranajunaid.com/" target="_blank">Intelligent Automation</a><a href="https://ranajunaid.com/" target="_blank">Conversational AI</a></div>
+    <div class="ftcl"><h5>Gen AI Strategy</h5><a href="https://ranajunaid.com/" target="_blank">Product Roadmapping</a><a href="https://ranajunaid.com/" target="_blank">0→1 Product Development</a><a href="https://ranajunaid.com/" target="_blank">Data-Driven Prioritization</a><a href="https://ranajunaid.com/" target="_blank">GTM Strategy</a><a href="https://ranajunaid.com/" target="_blank">Stakeholder Alignment</a></div>
+    <div class="ftcl"><h5>Domain Knowledge</h5><a href="https://ranajunaid.com/" target="_blank">LLMs & Foundation Models</a><a href="https://ranajunaid.com/" target="_blank">RAG & Knowledge Systems</a><a href="https://ranajunaid.com/" target="_blank">Enterprise SaaS</a><a href="https://ranajunaid.com/" target="_blank">Experimentation & Analytics</a><a href="https://ranajunaid.com/" target="_blank">Cloud Platforms</a></div>
+    <div class="ftcl"><h5>Connect</h5><a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank">Schedule a Call</a><a href="https://ranajunaid.com/" target="_blank">Full Portfolio</a><a href="https://ranajunaid.com/" target="_blank">LinkedIn</a><a href="https://ranajunaid.com/" target="_blank">GitHub</a></div>
+    <div class="ftcl"><h5>About</h5><a href="https://ranajunaid.com/" target="_blank">#AdobeLife</a><a href="https://ranajunaid.com/" target="_blank">#GenAI</a><a href="https://ranajunaid.com/" target="_blank">#AgenticAI</a><a href="https://ranajunaid.com/" target="_blank">San Jose, CA</a></div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-left">
-      <svg width="18" height="16" viewBox="0 0 30 26" fill="none">
-        <path d="M11.5 0H0L11.5 26V0Z" fill="#EB1000"/>
-        <path d="M18.5 0H30L18.5 26V0Z" fill="#EB1000"/>
-        <path d="M15 9.5L21 26H17L14.5 19.5H9L15 9.5Z" fill="#EB1000"/>
-      </svg>
-      Personalized portfolio for Emil Thomas — Not affiliated with Adobe, Inc.
-    </div>
-    <div class="footer-bottom-right">
-      <a href="https://ranajunaid.com/" target="_blank">Portfolio</a>
-      <span style="color:#8A8A8A;">·</span>
-      <a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank">Schedule Call</a>
-    </div>
+  <div class="ftb">
+    <div class="ftbl"><svg width="18" height="16" viewBox="0 0 30 26" fill="none"><path d="M11.5 0H0L11.5 26V0Z" fill="#EB1000"/><path d="M18.5 0H30L18.5 26V0Z" fill="#EB1000"/><path d="M15 9.5L21 26H17L14.5 19.5H9L15 9.5Z" fill="#EB1000"/></svg> Personalized portfolio for Emil Thomas — Not affiliated with Adobe, Inc.</div>
+    <div class="ftbr"><a href="https://ranajunaid.com/" target="_blank">Portfolio</a><span style="color:#8A8A8A;">·</span><a href="https://calendly.com/ranaajunaid01/let-s-talk-product" target="_blank">Schedule Call</a></div>
   </div>
 </footer>
 
-<!-- ═══════════ SCROLL SHADOW ═══════════ -->
-<script>
-  window.addEventListener('scroll', function() {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-  });
-</script>
-
+<script>window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);});</script>
 </body>
 </html>
